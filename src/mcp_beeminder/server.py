@@ -531,7 +531,7 @@ def get_user() -> str:
         str: A JSON string representation of the BeeminderUser instance.
     """
     try:
-        user = client.get_user(user=client.default_user)
+        user = client.get_user(username=client.default_user)
         return user.model_dump_json()
     except Exception as e:
         logger.error(f"Error in get_user: {str(e)}", exc_info=True)
